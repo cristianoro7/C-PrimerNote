@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "第七章/FriendTest.h"
+#include "7/FriendTest.h"
 
 int main() {
 

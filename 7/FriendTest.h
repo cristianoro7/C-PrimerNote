@@ -13,7 +13,7 @@ private:
     int b;
 
 public:
-    FriendTest(int b): b(b) {}
+    explicit FriendTest(int b): b(b) {}
 
     friend int getFriendTest_b(FriendTest &friendTest); //普通函数友元
     int getFriendTestB_a(FriendTestB &friendTestB) {
