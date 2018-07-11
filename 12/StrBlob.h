@@ -7,10 +7,15 @@
 
 #include <memory>
 #include <vector>
+#include "StrBlobPtr.h"
 
 using namespace std;
 
+class StrBlobPtr;
+
 class StrBlob {
+
+    friend class StrBlobPtr;
 
 public:
     using size_type = vector<string>::size_type;
@@ -33,7 +38,17 @@ public:
     void pop_back();
 
     string &front();
+
     string &back();
+
+    StrBlobPtr begin() {
+        return StrBlobPtr(*this);
+    }
+
+    StrBlobPtr end() {
+        return StrBlobPtr(*this, size());
+    }
+
 
 private:
     shared_ptr<vector<string>> data;
